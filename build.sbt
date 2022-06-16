@@ -31,5 +31,10 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
       "org.scalacheck" %%% "scalacheck" % "1.16.0"
     )
   )
+  .platformsSettings(JSPlatform, NativePlatform)(
+    libraryDependencies ++= Seq(
+      "io.github.cquiroz" %%% "scala-java-locales" % "1.4.0"
+    )
+  )
 
 lazy val docs = project.in(file("site")).enablePlugins(TypelevelSitePlugin)
