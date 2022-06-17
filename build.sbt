@@ -3,6 +3,7 @@ ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 
 ThisBuild / organization := "org.typelevel"
 ThisBuild / organizationName := "Typelevel"
+ThisBuild / startYear := Some(2022)
 ThisBuild / licenses := Seq(License.Apache2)
 ThisBuild / developers := List(
   // your GitHub handle and name
@@ -21,14 +22,19 @@ ThisBuild / scalaVersion := Scala213 // the default Scala
 
 lazy val root = tlCrossRootProject.aggregate(core)
 
-lazy val core = crossProject(JVMPlatform, JSPlatform)
+lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .crossType(CrossType.Pure)
   .in(file("core"))
   .settings(
     name := "scalacheck-xml",
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %%% "scala-xml" % "2.1.0",
-      "org.scalacheck" %%% "scalacheck" % "1.16.0",
+      "org.scalacheck" %%% "scalacheck" % "1.16.0"
+    )
+  )
+  .platformsSettings(JSPlatform, NativePlatform)(
+    libraryDependencies ++= Seq(
+      "io.github.cquiroz" %%% "scala-java-locales" % "1.4.0"
     )
   )
 
