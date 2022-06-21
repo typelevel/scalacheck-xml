@@ -19,10 +19,18 @@ package org.typelevel.scalacheck.xml
 import org.scalacheck.Prop
 import org.scalacheck.Properties
 
-class GeneratorsCheck extends Properties("GeneratorsCheck") {
+import java.io.StringWriter
+import java.nio.charset.StandardCharsets
+import scala.xml.XML
 
-  property("generates xml") = Prop.forAll(generators.genXml) { _ =>
-    Prop.passed
+class RoundTripCheck extends Properties("RoundTripCheck") {
+
+  property("genXml round trips") = Prop.forAll(generators.genXml) { node =>
+    val sw = new StringWriter
+    XML.write(sw, node, StandardCharsets.UTF_8.name, true, null)
+    val s = sw.toString
+    val node2 = XML.loadString(s)
+    node == node2
   }
 
 }
