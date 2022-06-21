@@ -23,7 +23,7 @@ import java.io.StringWriter
 import java.nio.charset.StandardCharsets
 import scala.xml.XML
 
-class GeneratorsCheck extends Properties("GeneratorsCheck") {
+class RoundTripCheck extends Properties("RoundTripCheck") {
 
   property("genXml round trips") = Prop.forAll(generators.genXml) { node =>
     val sw = new StringWriter

@@ -23,7 +23,7 @@ ThisBuild / scalaVersion := Scala213 // the default Scala
 lazy val root = tlCrossRootProject.aggregate(core)
 
 lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
-  .crossType(CrossType.Pure)
+  .crossType(CrossType.Full)
   .in(file("core"))
   .settings(
     name := "scalacheck-xml",
