@@ -1,5 +1,5 @@
 // https://typelevel.org/sbt-typelevel/faq.html#what-is-a-base-version-anyway
-ThisBuild / tlBaseVersion := "0.0" // your current series x.y
+ThisBuild / tlBaseVersion := "0.1" // your current series x.y
 
 ThisBuild / organization := "org.typelevel"
 ThisBuild / organizationName := "Typelevel"
@@ -34,7 +34,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   )
   .platformsSettings(JSPlatform, NativePlatform)(
     libraryDependencies ++= Seq(
-      "io.github.cquiroz" %%% "scala-java-locales" % "1.4.0"
+      "io.github.cquiroz" %%% "scala-java-locales" % "1.4.1"
     )
   )
 
