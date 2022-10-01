@@ -17,7 +17,7 @@ ThisBuild / tlSonatypeUseLegacyHost := false
 ThisBuild / tlSitePublishBranch := Some("main")
 
 val Scala213 = "2.13.8"
-ThisBuild / crossScalaVersions := Seq("2.12.16", Scala213, "3.1.3")
+ThisBuild / crossScalaVersions := Seq("2.12.17", Scala213, "3.1.3")
 ThisBuild / scalaVersion := Scala213 // the default Scala
 
 lazy val root = tlCrossRootProject.aggregate(core)
@@ -29,7 +29,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     name := "scalacheck-xml",
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %%% "scala-xml" % "2.1.0",
-      "org.scalacheck" %%% "scalacheck" % "1.16.0"
+      "org.scalacheck" %%% "scalacheck" % "1.17.0"
     )
   )
   .platformsSettings(JSPlatform, NativePlatform)(
