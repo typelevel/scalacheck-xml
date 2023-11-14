@@ -16,7 +16,7 @@ ThisBuild / tlSonatypeUseLegacyHost := false
 // publish website from this branch
 ThisBuild / tlSitePublishBranch := Some("main")
 
-val Scala213 = "2.13.11"
+val Scala213 = "2.13.12"
 ThisBuild / crossScalaVersions := Seq("2.12.18", Scala213, "3.3.1")
 ThisBuild / scalaVersion := Scala213 // the default Scala
 
@@ -28,7 +28,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .settings(
     name := "scalacheck-xml",
     libraryDependencies ++= Seq(
-      "org.scala-lang.modules" %%% "scala-xml" % "2.1.0",
+      "org.scala-lang.modules" %%% "scala-xml" % "2.2.0",
       "org.scalacheck" %%% "scalacheck" % "1.17.0"
     )
   )
