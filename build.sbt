@@ -29,7 +29,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     name := "scalacheck-xml",
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %%% "scala-xml" % "2.2.0",
-      "org.scalacheck" %%% "scalacheck" % "1.17.1"
+      "org.scalacheck" %%% "scalacheck" % "1.18.0"
     )
   )
   .platformsSettings(JSPlatform, NativePlatform)(
