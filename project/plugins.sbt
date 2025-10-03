@@ -1,4 +1,4 @@
-val sbtTypelevelV = "0.8.0"
+val sbtTypelevelV = "0.8.1"
 
 addSbtPlugin("org.typelevel" % "sbt-typelevel" % sbtTypelevelV)
 addSbtPlugin("org.typelevel" % "sbt-typelevel-site" % sbtTypelevelV)
