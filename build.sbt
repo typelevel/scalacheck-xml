@@ -14,7 +14,7 @@ ThisBuild / developers := List(
 ThisBuild / tlSitePublishBranch := Some("main")
 
 val Scala213 = "2.13.18"
-ThisBuild / crossScalaVersions := Seq("2.12.21", Scala213, "3.3.8")
+ThisBuild / crossScalaVersions := Seq("2.12.21", Scala213, "3.8.4")
 ThisBuild / scalaVersion := Scala213 // the default Scala
 
 lazy val root = tlCrossRootProject.aggregate(core)
